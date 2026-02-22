@@ -1,0 +1,121 @@
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "DynaPuff", system-ui;
+}
+
+body{
+    background-color: #222222;
+}
+
+.main-box{
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);  
+}
+
+.main-box label{
+    position: absoloute;
+    background-color: #F5E7C6;
+    height: 50px;
+    width: 150px;
+    border-radius: 35px;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #FA8112;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.main-box label::before{
+    content: 'Cancel';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #F5E7C6;
+    border-radius: 35px;
+    opacity: 0;
+    pointer-events: none; ;    
+}
+
+.main-box label:hover{
+    letter-spacing: 2px;
+}
+#check{
+    display: none;
+}
+#check:checked ~ label::before{
+    opacity: 1;
+    pointer-events: auto;
+    animation: cancel 0.3s ease;
+}
+.icons{
+    position: absolute;
+    top: -120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    width: 140%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #F5E7C6;
+    display: flex;
+    border-radius: 35px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease; 
+    opacity: 0;  
+    pointer-events: none; 
+}
+
+.icons::before{
+    content: '';
+    position: absolute;
+    transform: rotate(45deg);
+    width: 18px;
+    height: 18px;
+    background-color: #F5E7C6;
+    bottom: -9px;
+    
+}
+
+#check:checked ~ .icons{
+    opacity: 1;
+    pointer-events: auto;
+    top: -84px;
+
+}
+
+.icons a{
+    color: #FA8112;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+.icons a:hover{
+    transform: translateY(-2px);
+}
+
+.icons a:nth-child(1) :hover{
+    color: #3b5998;
+}
+
+.icons a:nth-child(2) :hover{
+    color: #00acee;
+}
+
+.icons a:nth-child(3) :hover{
+    color: #c4302b;
+}
+
+.icons a:nth-child(4) :hover{
+    color: #ff0000;
+}
